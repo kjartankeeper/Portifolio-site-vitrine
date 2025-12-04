@@ -4,12 +4,13 @@
 
 
 :root {
-   --branco-principal: #FFFFFF ;
-   --cinza-secundario: #C0C0C0 ;
-   --botao-principal: #167BF7;
-   --cor-de-fundo: #00030c;  
+   --branco-principal: #e7ce97 ;
+   --cinza-secundario: #a8a8a8 ;
+   --botao-principal: #F0B043;
+   --cor-de-fundo: #000000;  
    --font-principal: 'Inter', sans-serif;
-   --botao-azul-efeito:#140aaa;
+   --botao-azul-efeito:#dbba25;
+   --branco-botao: #ffffff;
 
 
 }
@@ -17,15 +18,22 @@
 *{
     margin: 0;
     padding: 0;
- 
+     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
+html, body {
+    overflow-x: hidden;
+}
 
 body  {
     background-color: var(--cor-de-fundo);
 color: var(--branco-principal);
 font-family: var(--font-principal);
-font-size: 16px;
+font-size: 20px;
 font-weight: 400;
 }
 
@@ -37,19 +45,19 @@ font-weight: 400;
     text-align: center;}
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
-    grid-template-columns:50% 50% ;
+    grid-template-columns:1fr 1fr ;
 }
 
 .container__titulo {
-    font: size 28px;
+    font-size:  48px;
     font-weight: 700;
 
 }
 .container__botao {
     text-decoration: none;
-    color: var(--branco-principal);
+    color: var(--branco-botao);
     background-color: var(--botao-principal);
     border-radius:8px ;
     padding: 1em;
@@ -72,21 +80,26 @@ font-weight: 400;
     
  }
 
- .container__imagem {
-    margin: 1em 0 2em 0;}
-
 .container__caixa {
     margin: 0 6em;
     }
 
 .secundario__imagem { 
-    width: 80%;
+    width: 100%;
 
+}
+
+.historia {
+     background-image: url(img/transferir.jpg);
+      background-repeat: no-repeat;
+    background-size: contain;
+    align-items: center;
+    text-align: center;
 }
 
 .secundario {
     align-items: center;
-    margin: 0 10em;
+    
 }
 
 
@@ -94,36 +107,45 @@ font-weight: 400;
     font-size: 48px;
     font-weight: 700;
     color: var(--branco-principal);
-    margin-bottom: 0.1em;
+    margin-bottom: 1em;
+    text-align: center;
     }
 
 .descricao__texto {
     color:var(--cinza-secundario) ;
+    text-align: center;
 }
 
-.teceario {
-    align-items: center;
-    margin: 0 10em;
+.historia_historia{
+    margin-bottom: 5%;
 }
 
 .secundario__botao {
     display: inline-block;
-    margin-top: 1em;
+    margin-top: 1em;}
+
+.container__art{
+    display: flex;
 }
 
 .container__descricao {
     padding: 2em;
+    width: 80%;
+    
 }
 
-.dispositivos__lista {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin: 5em 0;
+.video iframe {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 16/9;
+   
 }
+
+
 
 .dispositivos {
     text-align: center;
+    margin-top: 5%;
 }
 
 .dispositivos__titulo {
@@ -135,15 +157,22 @@ font-weight: 400;
 .lista_item {
     font-size: 32px;
     color: var(--branco-principal);
+    margin-top: 10%;
+}
+
+.dispositivos__icones{
+    display: flex;
+    gap: 8em;
+    justify-content: center;
+    list-style-type: none;
+     margin: 5em 0;
 }
 
 .rodape{
     text-align: center;
 }
 
-.rodape__logo {
-    margin-bottom: 2em;
-}
+
 
 .rodape__lista {
     display: flex;
@@ -172,9 +201,77 @@ font-weight: 400;
 .lista__link a:active {
     color: red }
 
+.logo_clair {
+    width: 350px;
+    margin: 5%;
+}
+
 .container__botao:hover {
     background-color: var(--branco-principal);
     color: var(--cor-de-fundo);
  }
 
- 
+@media (max-width: 1200px) {
+ .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        align-items: center;
+        
+    }
+.container__caixa {
+    margin: 0 1em;
+    margin-bottom: 5%;
+}
+.container__titulo{
+    margin-top: 50%;
+    width: 100%;
+}
+.video {
+    display: flex;
+    width: 80%;
+    margin-bottom: 5%;
+    border-radius: 15%;
+}
+
+.container__art{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+     padding: 0.5em 0;
+    margin-top: 10%;
+}
+.dispositivos
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.dispositivos__icones {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.dispositivos__icones img{
+    flex-direction: row;
+    justify-content: center;
+    max-width:80px;
+    height:auto;
+    margin-bottom: 0;
+}
+
+.rodape__lista {
+    display: grid;
+
+}
+}
